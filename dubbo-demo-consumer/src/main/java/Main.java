@@ -1,6 +1,5 @@
 import com.lk.dubbo.demo.service.GreetingService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
 import java.io.IOException;
 
 /**
@@ -16,7 +15,7 @@ public class Main {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
         context.start();
         GreetingService greetingService = (GreetingService) context.getBean("greetingService");
-        String greetMessage = greetingService.hello("Eric");
+        String greetMessage = greetingService.hello("world");
         System.out.println("Consumer请求信息 ==> " + greetMessage);
         context.destroy();
     }

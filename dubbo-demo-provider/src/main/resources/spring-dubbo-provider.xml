@@ -20,7 +20,7 @@
     <!-- Greeting服务接口实现类 -->
     <bean id="greetingService" class="com.lk.dubbo.demo.service.impl.GreetingServiceImpl" />
 
-    <!--接口配置-->
-    <dubbo:service protocol="dubbo"
+    <!--接口配置 提供端 protocol :协议; loadbalance:负载均衡方式; -->
+    <dubbo:service protocol="dubbo" loadbalance="roundrobin"
                    interface="com.lk.dubbo.demo.service.GreetingService" ref="greetingService" />
 </beans>
